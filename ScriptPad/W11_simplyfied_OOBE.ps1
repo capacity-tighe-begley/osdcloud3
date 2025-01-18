@@ -17,7 +17,7 @@ Import-Module OSD -Force
 #=======================================================================
 $Params = @{
     OSVersion = "Windows 11"
-    OSBuild = "23H2"
+    OSBuild = "24H2"
     OSEdition = "Pro"
     OSLanguage = "en-us"
     OSLicense = "Retail"
@@ -87,7 +87,7 @@ Write-Host -ForegroundColor Green "Define Computername:"
 $Serial = Get-WmiObject Win32_bios | Select-Object -ExpandProperty SerialNumber
 $TargetComputername = $Serial.Substring(4,3)
 
-$AssignedComputerName = "AkosCloud-$TargetComputername"
+$AssignedComputerName = "$TargetComputername"
 Write-Host -ForegroundColor Red $AssignedComputerName
 Write-Host ""
 
